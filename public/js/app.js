@@ -15,7 +15,7 @@ const messageTwo = document.querySelector('#message-2')
                 e.preventDefault();
                 const location = search.value;
                 console.log("testing",location)
-                fetch(`http://localhost:3004/weather?address=${location}`)
+                fetch(`/weather?address=${location}`)
                 .then((response)=>{
                     response.json()
                     .then(data=>{
