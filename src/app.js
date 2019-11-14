@@ -80,7 +80,7 @@ app.get('/weather',(req,res)=>{
                 error:err
             })
         }
-        foreCast(latitude,longitude,(foreCastErr,{ summary , temperature , precipProbability}={})=>{
+        foreCast(latitude,longitude,(foreCastErr,{ summary , temperature , precipProbability ,temperatureHigh ,temperatureLow}={})=>{
             if(foreCastErr){
                 return res.send({
                     error: foreCastErr
@@ -90,7 +90,9 @@ app.get('/weather',(req,res)=>{
                 summary: summary,
                 temperature:temperature,
                 precipProbability: precipProbability,
-                location:location
+                location:location,
+                temperatureLow,
+                temperatureHigh
             })
         })
 
